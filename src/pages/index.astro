@@ -1,5 +1,19 @@
 ---
+import ModelSelect from "../components/model-select.astro";
 
+// export const prerender = false
+
+// if (Astro.request.method === "POST") {
+//   try {
+//     const data = await Astro.request.formData();
+//     const query = data.get("query");
+// 	console.log(query);
+//   } catch (error) {
+//     if (error instanceof Error) {
+//       console.error(error.message);
+//     }
+//   }
+// }
 ---
 
 <html lang="en">
@@ -8,9 +22,126 @@
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<title>Nopilot</title>
+		<!-- <script>import "../lib/📜.ts";</script> -->
+		<script src="../lib/📜.ts"></script>
 	</head>
 	<body>
-		<h1>Astro</h1>
+		<main>
+			<h1>Nopilot</h1>
+			<div class="response-wrapper">Ooh la la</div>
+			<div class="input-wrapper">
+				<form class="input-form" autocomplete="off">
+					<textarea
+						name="🤮"
+						placeholder="How can I help you?"
+						autofocus="true"></textarea>
+					<div>
+						<ModelSelect name="🦠" server:defer>
+							<select slot="fallback">
+								<option>so many models to load</option>
+							</select>
+						</ModelSelect>
+						<button type="submit">Submit</button>
+					</div>
+				</form>
+			</div>
+		</main>
 	</body>
 </html>
+<script>
+	import { submitQuery } from "../lib/📜";
+	document.querySelectorAll("form.input-form").forEach((_e) => {
+		const form = _e as HTMLFormElement;
+		form.addEventListener("submit", (e) => {
+			e.preventDefault();
+			submitQuery(form, e);
+			(form.children[0] as HTMLElement).focus();
+		});
+		form.addEventListener("click", (e) => {
+			if (
+				e.target === form ||
+				(e.target as HTMLElement).tagName.toLowerCase() === "DIV"
+			) {
+				(form.children[0] as HTMLElement).focus();
+			}
+		});
+		form.addEventListener("keypress", (e) => {
+			if (!e.shiftKey && e.key === "Enter") {
+				e.preventDefault();
+				form.requestSubmit();
+			}
+		});
+	});
+</script>
+<style>
+	:root {
+		color-scheme: light dark;
+		--bg-color: light-dark(white, black);
+		--text-color: light-dark(black, white);
+		--content-width: 65ch;
+	}
+
+	html {
+		width: 100%;
+		height: 100%;
+		color: var(--text-color);
+		background-color: var(--bg-color);
+		font-family: serif;
+	}
+
+	html,
+	body {
+		margin: 0;
+	}
+
+	* {
+		box-sizing: border-box;
+	}
+
+	main {
+		display: flex;
+		flex-flow: column nowrap;
+		width: 100%;
+		height: 100svh;
+		box-sizing: border-box;
+		padding: 20px;
+	}
+
+	.response-wrapper {
+		flex-basis: content;
+		flex-grow: 1;
+		overflow-y: hidden;
+	}
+
+	.input-wrapper {
+		width: 100%;
+		display: flex;
+		justify-content: center;
+	}
+
+	.input-form {
+		width: var(--content-width);
+		padding: 20px;
+		border: 1px solid #888;
+		border-radius: 20px;
+		cursor: text;
+
+		& > textarea {
+			width: 100%;
+			resize: none;
+			border: unset;
+			outline: none;
+			background-color: unset;
+		}
+
+		& > div {
+			display: flex;
+			justify-content: space-between;
+
+			button {
+				cursor: pointer;
+			}
+		}
+	}
+</style>
