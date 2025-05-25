@@ -1,4 +1,5 @@
 ---
+import FaviconWrapper from "../components/favicon-wrapper.astro";
 import ModelSelect from "../components/model-select.astro";
 
 // export const prerender = false
@@ -18,12 +19,10 @@ import ModelSelect from "../components/model-select.astro";
 
 <html lang="en">
 	<head>
+		<FaviconWrapper />
 		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
 		<title>Nopilot</title>
-		<!-- <script>import "../lib/📜.ts";</script> -->
 		<script src="../lib/📜.ts"></script>
 	</head>
 	<body>

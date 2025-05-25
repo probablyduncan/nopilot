@@ -1,0 +1,7 @@
+---
+import FaviconRandomizer from "./favicon-randomizer.astro";
+---
+
+<FaviconRandomizer randomize={true} server:defer>
+    <FaviconRandomizer randomize={false} />
+</FaviconRandomizer>
