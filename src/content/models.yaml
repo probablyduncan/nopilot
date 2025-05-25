@@ -1,0 +1,33 @@
+NOpenai:
+    - gpt-4no
+    - gpt-4no-mini
+    - no4
+    - no4-mini
+    - no4-pro
+    - no4-silver-edition
+Fraude:
+    - nopus-3
+    - nopus-4-mini
+    - nopus-3-pro
+    - sonnot-3-pro
+    - sonnot-3.1-pro-mini-4
+    - nopus-4-big
+    - nopus-4-thinking
+    - sonnot-3-pro-mini-pondering
+gemiNO:
+    - 2.5 flash
+    - 2.5 ultra
+    - 2.5 pro max
+    - 2.5 extra extra
+    - 2.5 nano
+    - 2.5 nano plus
+    - 2.5 nano pro
+    - flash-2.7-unreasonable-2
+    - flash-flood
+NOllama:
+    - llama 3.1
+    - llama 3.1.0
+    - llama 3.2
+    - llama 3.2.0
+    - llama 3.1.2
+    - llama 3.2.1
