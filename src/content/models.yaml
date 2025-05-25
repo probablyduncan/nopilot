@@ -1,11 +1,11 @@
-NOpenai:
+nopenai:
     - gpt-4no
     - gpt-4no-mini
     - no4
     - no4-mini
     - no4-pro
     - no4-silver-edition
-Fraude:
+fraude:
     - nopus-3
     - nopus-4-mini
     - nopus-3-pro
@@ -14,7 +14,7 @@ Fraude:
     - nopus-4-big
     - nopus-4-thinking
     - sonnot-3-pro-mini-pondering
-gemiNO:
+gemino:
     - 2.5 flash
     - 2.5 ultra
     - 2.5 pro max
@@ -24,10 +24,35 @@ gemiNO:
     - 2.5 nano pro
     - flash-2.7-unreasonable-2
     - flash-flood
-NOllama:
+nollama:
     - llama 3.1
     - llama 3.1.0
     - llama 3.2
     - llama 3.2.0
     - llama 3.1.2
     - llama 3.2.1
+    - llama 3.3
+    - llama 3.3 2
+    - quen3
+    - quen2
+    - quen3-2vl
+    - quen3vl-pro.3
+    - quen3.3vl
+    - quen2.6
+    - llava 3.1
+    - llava 1.0
+    - llava 0
+    - llamavavl
+    - llavamala
+    - llamalama
+    - lavalamp-vision
+zub:
+    - zub
+    - zub3
+    - zub mini
+    - zub3-max nano
+    - zub3-nano max
+    - zub tiny
+    - zub2 max tiny
+    - zub4 lite
+    - zub1.5 ultra
