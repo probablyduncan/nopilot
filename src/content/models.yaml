@@ -1,15 +1,23 @@
 nopenai:
     - gpt-4no
     - gpt-4no-mini
+    - gpt-3 codex
+    - gpt-4
+    - gpt-4.1
+    - gpt-4no3
+    - no3
+    - no1 (preview)
     - no4
-    - no4-mini
-    - no4-pro
-    - no4-silver-edition
+    - no3-mini
+    - no3-mini pro
+    - no3-pro
+    - no3-silver-edition
 fraude:
     - nopus-3
     - nopus-4-mini
     - nopus-3-pro
     - nopus-3-pro thinking
+    - nopus-3-pro thinking (preview)
     - sonnot-3-pro
     - sonnot-3.1-pro-mini-4
     - nopus-4-big
@@ -23,6 +31,7 @@ gemino:
     - 2.5 nano
     - 2.51 100 nano plus
     - 2.5 nano pro
+
     - flash-2.7 0011
     - flash-2.7 0012
     - flash-2.7 0012_final
@@ -33,18 +42,21 @@ nollama:
     - llama 3.2
     - llama 3.2.0
     - llama 3.1.2
-    - llama 3.2.1
+    - llama 3.2.1 (preview)
     - llama 3.3
     - llama 3.3 2
+
     - quen3
     - quen2
     - quen3-2vl
     - quen3vl-pro.3
     - quen3.3vl
     - quen2.6
+
     - llava 3.1
     - llava 1.0
     - llava 0
+
     - llamavavl
     - llavamala
     - llamalama
@@ -52,7 +64,8 @@ nollama:
 zub:
     - zub
     - zub3
-    - zub3_final
+    - zub3_final (preview)
+    - zub3_final_final
     - zub mini
     - zub3-max nano
     - zub3-nano max
@@ -81,3 +94,7 @@ ti:
 
     - ti-89
     - ti-89 titanium
+
+    - ti-92
+    - ti-92 ii
+    - ti-92 plus
