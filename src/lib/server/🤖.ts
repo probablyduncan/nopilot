@@ -1,8 +1,20 @@
 import retextEnglish from "retext-english";
 import retextProfanitiesEn from "retext-profanities/en";
 import { retext } from "retext";
+import { getCollection, getEntry } from "astro:content";
+
+export type ModelContext = {
+    input: string;
+}
 
 export async function processInput(input: string): Promise<string> {
+
+    const context: ModelContext = { input };
+
+    const suggested = (await getCollection("suggestedPromps")).find(k => k.id === input);
+    if (suggested) {
+        return await getFromSuggested(suggested.id);
+    }
 
     let getResponse: InputHandler["getResponse"];
     let numItems = 0;
@@ -21,9 +33,9 @@ export async function processInput(input: string): Promise<string> {
     return await getResponse(input);
 }
 
-
-
-
+async function getFromSuggested(key: string): Promise<string> {
+    return (await getEntry("suggestedPromps", key)).data;
+}
 
 
 
@@ -49,7 +61,7 @@ class ProfanityHandler implements InputHandler {
         this._messages = parse.messages;
         return this._messages.length > 0;
     }
-    async getResponse(input: string): Promise<string> {
+    async getResponse(): Promise<string> {
         return `<p>Watch your mouth!</p><p>-1 social credit.</p>`;
     }
 
@@ -57,9 +69,9 @@ class ProfanityHandler implements InputHandler {
 
 const mock: InputHandler = {
     canRespond: async () => true,
-    getResponse: async (input) => `<p>“${input}” 💀💀💀</p>`,
+    getResponse: async (input) => `<p>“${input}”</p><p>💀💀💀</p>`,
 }
 
 const options: InputHandler[] = [
     mock, new ProfanityHandler(),
-]
+];

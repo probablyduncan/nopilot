@@ -6,4 +6,9 @@ const models = defineCollection({
     schema: z.array(z.string()),
 });
 
-export const collections = { models };
+const suggestedPromps = defineCollection({
+    loader: file("src/content/suggested-promps.yaml"),
+    schema: z.string(),
+});
+
+export const collections = { models, suggestedPromps };

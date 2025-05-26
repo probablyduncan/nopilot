@@ -1,0 +1,33 @@
+---
+import { shuffleRef } from "@probablyduncan/common";
+import { getCollection } from "astro:content";
+
+const promptsArr = await getCollection("suggestedPromps");
+shuffleRef(promptsArr);
+---
+
+<div>
+    {promptsArr.map((p) => <button data-prompt-id={p.id}>{p.data}</button>)}
+</div>
+<style>
+    button {
+        color: unset;
+        padding: unset;
+        margin: unset;
+        border: unset;
+        background-color: unset;
+    }
+</style>
+<script>
+    import { submitQuery } from "../lib/client/📜";
+
+    document.querySelectorAll("button[data-prompt-id]").forEach((_e) => {
+        const button = _e as HTMLButtonElement;
+        const promptId = button.dataset.promptId;
+        button.addEventListener("click", () => {
+            const data = new FormData();
+            data.set("🤮", promptId);
+            submitQuery(data);
+        });
+    });
+</script>
