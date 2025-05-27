@@ -10,12 +10,88 @@ shuffleRef(promptsArr);
     {promptsArr.map((p) => <button data-prompt-id={p.id}>{p.data}</button>)}
 </div>
 <style>
+    div {
+        display: flex;
+        flex-flow: column wrap;
+        /* flex-direction: row wrap; */
+        gap: 0.5rem;
+    }
+
+    @property --btn-bg {
+        syntax: "<color>";
+        inherits: false;
+        initial-value: lavender;
+    }
+
+    @property --shine-1 {
+        syntax: "<color>";
+        inherits: false;
+        initial-value: wheat;
+    }
+
+    @property --shine-2 {
+        syntax: "<color>";
+        inherits: false;
+        initial-value: lightpink;
+    }
+
+    /* light */
+    /* #ccf4fd, #ecccfc */
+
+    /* light hover */
+    /* #a6ecfc, #dfa6fa */
+
+    /* dark */
+    /* #104e5e, #262860, #40125c */
+
+    /* dark hover */
+    /* #0b778f, #343292, #610d8d */
+
     button {
-        color: unset;
+        color: black;
+        font-size: unset;
         padding: unset;
         margin: unset;
         border: unset;
         background-color: unset;
+        display: block;
+        padding: 0.5rem 1rem;
+
+        background-image: url(../components/gradient.svg);
+        background-position: 50% 50%;
+        background-size: cover;
+        background-repeat: repeat;
+
+        /* background: radial-gradient(
+                300px circle at 55% 60% in oklab,
+                var(--shine-2),
+                transparent 100% 100%
+            ),
+            radial-gradient(
+                farthest-side circle at 75% 30% in oklab,
+                var(--shine-1) 0%,
+                var(--btn-bg) 100%
+            ); */
+
+        transition:
+            background-position 0.3s,
+            background-size 0.3s,
+            color 0.3s,
+            --btn-bg 0.3s,
+            --shine-1 0.3s,
+            --shine-2 0.3s;
+
+        border-radius: 1rem;
+        border: 2px solid white;
+        cursor: pointer;
+
+        &:hover, &:focus {
+            background-position: 50% 100%;
+            color: white;
+            --btn-bg: lavender;
+            --shine-1: hotpink;
+            --shine-2: hotpink;
+        }
     }
 </style>
 <script>
