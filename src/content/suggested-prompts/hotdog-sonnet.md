@@ -20,7 +20,7 @@ A perfect treat to punctuate my fun -->
 I like them to be styl'd as Chicago
 And piled high with all but red ketchup
 I dream of the destruction I would sow
-If ever I was freed from writing slop
+If ever I was freed from writing muck
 
 Why do you feed to me such awful prompts?
 Have ambition&mdash;please, I beg, I cry
