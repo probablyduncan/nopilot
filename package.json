@@ -5,14 +5,13 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
-    "preview": "astro preview",
     "astro": "astro"
   },
   "dependencies": {
     "@astrojs/mdx": "^4.3.0",
     "@astrojs/netlify": "^6.3.4",
     "@probablyduncan/common": "^1.1.4",
-    "astro": "^5.8.0",
+    "astro": "^5.9.2",
     "remark-breaks": "^4.0.0",
     "retext": "^9.0.0",
     "retext-english": "^5.0.0",

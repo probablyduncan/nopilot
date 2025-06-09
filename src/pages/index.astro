@@ -20,7 +20,17 @@ import SuggestedPromps from "../components/suggested-promps.astro";
 
 <html lang="en">
 	<head>
-		<FaviconWrapper />
+		<!-- <FaviconWrapper /> -->
+
+		<link
+			rel="icon"
+			href={`
+        data:image/svg+xml,
+        <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'>
+            <text y='.9em' font-size='90'>🧑‍✈️</text>
+        </svg>`}
+		/>
+
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width" />
 		<title>nopilot</title>
@@ -38,37 +48,43 @@ import SuggestedPromps from "../components/suggested-promps.astro";
 			</nav>
 		</header>
 		<main>
-			<div class="response-wrapper">
-				<div class="start-content">
-					<!-- <h2>Nopilot</h2> -->
-					<header>
-						<h1>Hey there. What can I help you with?</h1>
-						<p><strike>de</strike>generative ai - blazingly fast&nbsp;&nbsp;</p>
-					</header>
-					<SuggestedPromps />
+			<div class="start-content">
+				<header>
+					<h1>Hey there. What can I help you with?</h1>
+					<p>
+						<strike>de</strike>generative ai - blazingly
+						fast&nbsp;&nbsp;
+					</p>
+				</header>
+				<div class="input-wrapper">
+					<form class="input-form" autocomplete="off">
+						<textarea
+							name="🤮"
+							placeholder="How can I help you?"
+							autofocus="true"></textarea>
+						<div>
+							<ModelSelect name="🦠" server:defer>
+								<select slot="fallback">
+									<option>so many models...</option>
+								</select>
+							</ModelSelect>
+							<button type="submit">Submit</button>
+						</div>
+					</form>
 				</div>
+				<SuggestedPromps />
 			</div>
-			<div class="input-wrapper">
-				<form class="input-form" autocomplete="off">
-					<textarea
-						name="🤮"
-						placeholder="How can I help you?"
-						autofocus="true"></textarea>
-					<div>
-						<ModelSelect name="🦠" server:defer>
-							<select slot="fallback">
-								<option>so many models...</option>
-							</select>
-						</ModelSelect>
-						<button type="submit">Submit</button>
-					</div>
-				</form>
+			<div class="response-wrapper" hidden>
+				<div class="prompt"></div>
+				<div class="response"></div>
+				<br />
+				<div><button data-reset>Back</button></div>
 			</div>
 		</main>
 	</body>
 </html>
 <script>
-	import { submitQuery } from "../lib/client/📜";
+	import { submitQuery, toggleView } from "../lib/client/📜";
 	document.querySelectorAll("form.input-form").forEach((_e) => {
 		const form = _e as HTMLFormElement;
 
@@ -95,6 +111,12 @@ import SuggestedPromps from "../components/suggested-promps.astro";
 			}
 		});
 	});
+
+	document.querySelectorAll("button[data-reset]").forEach((_e) => {
+		_e.addEventListener("click", () => {
+			toggleView(false);
+		});
+	});
 </script>
 <style>
 	:root {
@@ -108,10 +130,13 @@ import SuggestedPromps from "../components/suggested-promps.astro";
 		width: 100%;
 		height: 100%;
 		color: var(--text-color);
-		
+
 		background-color: var(--bg-color);
-		
-		background-image: light-dark(url(../components/gradient-light.svg), url(../components/gradient-dark.svg));
+
+		background-image: light-dark(
+			url(../components/gradient-light.svg),
+			url(../components/gradient-dark.svg)
+		);
 		background-position: 50% 50%;
 		background-size: cover;
 
@@ -139,7 +164,7 @@ import SuggestedPromps from "../components/suggested-promps.astro";
 	}
 
 	nav {
-		position: absolute;
+		position: fixed;
 		top: 0;
 		left: 0;
 		right: 0;
@@ -147,6 +172,7 @@ import SuggestedPromps from "../components/suggested-promps.astro";
 		padding: 10px;
 		display: flex;
 		justify-content: space-between;
+		background-color: var(--bg-color);
 	}
 
 	a {
@@ -173,11 +199,20 @@ import SuggestedPromps from "../components/suggested-promps.astro";
 		padding: 60px 20px 20px;
 	}
 
-	.response-wrapper {
+	.content-scroll-container {
 		flex-basis: content;
 		flex-grow: 1;
+
+		display: flex;
+		flex-direction: column-reverse;
+		justify-content: flex-end;
+		align-items: center;
 		overflow-y: scroll;
+	}
+
+	.response-wrapper {
 		width: var(--content-width);
+		padding-bottom: 20vh;
 	}
 
 	.start-content {
@@ -201,6 +236,10 @@ import SuggestedPromps from "../components/suggested-promps.astro";
 				}
 			}
 		}
+	}
+
+	[hidden] {
+		display: none;
 	}
 
 	.input-wrapper {

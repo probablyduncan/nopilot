@@ -6,7 +6,7 @@ interface Props {
 
 const { randomize } = Astro.props;
 
-const favicons = ["✨", "🤖", "🤮", "😫", "🕳️", "💸"] as const;
+const favicons = ["✨", "🤖", "🤮", "😫", "🕳️", "💸", "🧑‍✈️"] as const;
 const icon = favicons[randomize ?  Math.floor(Math.random() * favicons.length) : 0];
 ---
 

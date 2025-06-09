@@ -1,10 +1,11 @@
 ---
 import { shuffle } from "@probablyduncan/common";
+import type { HTMLAttributes } from "astro/types";
 import { getCollection } from "astro:content";
 
 const models = await getCollection("models");
 
-interface Props extends astroHTML.JSX.SelectHTMLAttributes {}
+interface Props extends HTMLAttributes<"select"> {}
 const props = Astro.props;
 ---
 
