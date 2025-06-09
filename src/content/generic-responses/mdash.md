@@ -1,4 +1,4 @@
-Actually, the em dash (&mdash;) is an incredibly popular form of punctuation. It is common in syntactical structures—such as sentences—and useful when interjecting a tangential or supportive thought.
+Actually, the em dash (&mdash;) is an incredibly popular form of punctuation. It is common in syntactical structures&mdash;such as sentences&mdash;and useful when interjecting a tangential or supportive thought.
 
 ✅ Solutions:
 
@@ -52,7 +52,7 @@ For example:
 - There was a noise in the hallway&mdash;spiders!
 - "Here I am, just walking along, minding my own&mdash;"
 - "Suzy?"
-- There was no response. Suzy&mdash;one of my best friends&mdash;had vanished.
+- There was no response. Suzy&mdash;one of my best friends&mdash;was being swiftly wrapped into a silky cocoon.
 
 ## 🤪 In conclusion
 
