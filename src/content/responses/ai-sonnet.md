@@ -1,3 +1,7 @@
+---
+random: true
+---
+
 🖋️ Sure, here's a Shakespearean sonnet about artificial intelligence.
 
 **Sonnet: Electric Dreams**

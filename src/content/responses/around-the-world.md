@@ -1,3 +1,7 @@
+---
+random: true
+---
+
 Sure, here are the lyrics to Daft Punk's 2014 hit "Around the World", a song by French electronic music duo Daft Punk[^1].
 
 # 🌎 Around The World (lyrics)

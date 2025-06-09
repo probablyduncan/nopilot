@@ -1,6 +1,7 @@
 ---
-prompt: "🤖 “Why are there robots doing my job?”"
-input: "Why are there robots doing my job?"
+suggested:
+    prompt: "🤖 “Why are there robots doing my job?”"
+    input: "Why are there robots doing my job?"
 ---
 
 Why, we're just so much better at it than you are.

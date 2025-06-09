@@ -2,12 +2,27 @@
 import { shuffleRef } from "@probablyduncan/common";
 import { getCollection } from "astro:content";
 
-const promptsArr = await getCollection("suggestedPromps");
-shuffleRef(promptsArr);
+const responses = await getCollection("responses");
+shuffleRef(responses);
+
+const suggestions = [];
+for (const response of responses) {
+    if (response.data.suggested !== undefined) {
+        suggestions.push(response);
+    }
+
+    if (suggestions.length >= 4) {
+        break;
+    }
+}
 ---
 
 <div>
-    {promptsArr.map((p) => <button data-prompt-id={p.id}>{p.data}</button>)}
+    {
+        suggestions.map((p) => (
+            <button data-prompt-id={p.id}>{p.data.suggested.prompt}</button>
+        ))
+    }
 </div>
 <style>
     div {
@@ -102,7 +117,7 @@ shuffleRef(promptsArr);
         const promptId = button.dataset.promptId;
         button.addEventListener("click", () => {
             const data = new FormData();
-            data.set("🤮", promptId);
+            data.set("😵‍💫", promptId);
             submitQuery(data);
         });
     });

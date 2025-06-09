@@ -1,6 +1,7 @@
 ---
-prompt: "🌭 “Write me a Shakespearean sonnet about hot dogs.”"
-input: "Write me a Shakespearean sonnet about hot dogs"
+suggested:
+    prompt: "🌭 “Write me a Shakespearean sonnet about hot dogs.”"
+    input: "Write me a Shakespearean sonnet about hot dogs"
 ---
 
 🔥🐕 Sure, here's a Shakespearean sonnet about hot dogs.

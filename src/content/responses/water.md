@@ -1,6 +1,8 @@
 ---
-prompt: "✨ Ask about: “LLM Water Consumption”"
-input: "Please explain LLM water consumption from a unbiased, neutral perspective."
+suggested:
+    prompt: "✨ Ask about: “LLM Water Consumption”"
+    input: "Please explain LLM water consumption from a unbiased, neutral perspective."
+random: true
 ---
 
 Good question!

@@ -1,3 +1,8 @@
+---
+random:
+    filter: "mdash"
+---
+
 Actually, the em dash (&mdash;) is an incredibly popular form of punctuation. It is common in syntactical structures&mdash;such as sentences&mdash;and useful when interjecting a tangential or supportive thought.
 
 ✅ Solutions:

@@ -1,27 +1,22 @@
 export const prerender = false;
 import type { APIRoute } from "astro";
-import { processInput } from "../../lib/server/🤖";
+import { processPrompt } from "../../lib/server/🤖";
 
 export const POST: APIRoute = async ({ request }) => {
+    const result = await processPrompt(await request.formData());
 
-    const data = await request.formData();
-    const input = data.get("🤮");
-
-    const html = await processInput(input.toString());
-
-    if (!input) {
+    if (!result) {
         return new Response(
             JSON.stringify({
-                html,
+                html: "<p>Stop wasting my time!</p>",
+                key: "zilch",
             }),
             { status: 400 },
         );
     }
 
     return new Response(
-        JSON.stringify({
-            html,
-        }),
+        JSON.stringify(result),
         { status: 200 },
     );
 }
